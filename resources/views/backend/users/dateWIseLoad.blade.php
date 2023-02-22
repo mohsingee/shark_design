@@ -11,17 +11,17 @@
      <div class="row">
       <div class="col-md-7 mx-auto p-2">
         <form class="form-inline" method="post" action="{{ route('users.search_date_wise') }}" id="dateWiseSearch">
-          @csrf
-          <div class="form-group mx-sm-3 mb-2">
-            <label class="mr-2">Start Date:</label>
-            <input type="date" class="form-control" name="start_date" id="start_date">
-          </div>
-          <div class="form-group mx-sm-3 mb-2">
-            <label class="mr-2">End Date:</label>
-            <input type="date" class="form-control" name="end_date" id="end_date">
-          </div>
-          <button type="submit" class="btn btn-primary mb-2">Search</button>
-        </form>
+            @csrf
+            <div class="form-group mx-sm-3 mb-2">
+              <label class="mr-2">Start Date:</label>
+              <input type="date" class="form-control" name="start_date" id="start_date">
+            </div>
+            <div class="form-group mx-sm-3 mb-2">
+              <label class="mr-2">End Date:</label>
+              <input type="date" class="form-control" name="end_date" id="end_date">
+            </div>
+            <button type="submit" class="btn btn-primary mb-2">Search</button>
+          </form>
       </div>
      </div>
     <div class="card-header py-3">
@@ -178,6 +178,6 @@
                     }
                 });
           })
-      })
+      });
   </script>
 @endpush

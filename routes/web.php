@@ -107,6 +107,7 @@ Route::group(['prefix'=>'/admin','middleware'=>['auth','admin']],function(){
     })->name('file-manager');
     // user route
     Route::resource('users','UsersController');
+    Route::post('/users/search_date_wise','UsersController@searechDateWise')->name('users.search_date_wise');
     // Banner
     Route::resource('banner','BannerController');
     // Brand
@@ -133,6 +134,7 @@ Route::group(['prefix'=>'/admin','middleware'=>['auth','admin']],function(){
 
     // Order
     Route::resource('/order','OrderController');
+    Route::post('/orders/search_date_wise','OrderController@searechDateWise')->name('orders.search_date_wise');
     // Shipping
     Route::resource('/shipping','ShippingController');
     // Coupon

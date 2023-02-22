@@ -313,4 +313,9 @@ class OrderController extends Controller
         }
         return $data;
     }
+
+    public function searechDateWise(Request $request){
+        $orders = Order::whereBetween('created_at', [$request->start_date,$request->end_date])->paginate(10);
+        return view('backend.order.dateWiseLoad')->with('orders',$orders);
+    }
 }

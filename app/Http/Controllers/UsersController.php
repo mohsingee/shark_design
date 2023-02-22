@@ -135,4 +135,9 @@ class UsersController extends Controller
         }
         return redirect()->route('users.index');
     }
+
+    public function searechDateWise(Request $request){
+        $users = User::whereBetween('created_at', [$request->start_date,$request->end_date])->paginate(10);
+        return view('backend.users.dateWiseLoad')->with('users',$users);
+    }
 }
