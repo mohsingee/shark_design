@@ -120,13 +120,12 @@ class OrderController extends Controller
         }
         // return $order_data['total_amount'];
         $order_data['status']="new";
-        if(request('payment_method')=='paypal'){
-            $order_data['payment_method']='paypal';
-            $order_data['payment_status']='paid';
+        $order_data['payment_status']='Unpaid';
+        if(request('payment_method')=='stripe'){
+            $order_data['payment_method']='stripe';
         }
         else{
             $order_data['payment_method']='cod';
-            $order_data['payment_status']='Unpaid';
         }
         $order_data['sale_tax'] = $order_data['total_amount']*Helper::settings()->tax/100;
         $order_data['total_amount'] = $order_data['total_amount']+$order_data['sale_tax'];
@@ -141,8 +140,8 @@ class OrderController extends Controller
             'fas'=>'fa-file-alt'
         ];
         Notification::send($users, new StatusNotification($details));
-        if(request('payment_method')=='paypal'){
-            return redirect()->route('payment',$order->id);
+        if(request('payment_method')=='stripe'){
+            return redirect()->route('payment-process',$order->id);
         }
         else{
             session()->forget('cart');

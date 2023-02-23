@@ -92,11 +92,19 @@ Route::resource('/comment','PostCommentController');
 // Coupon
 Route::post('/coupon-store','CouponController@couponStore')->name('coupon-store');
 // Payment
-Route::get('payment/{id}', 'PayPalController@payment')->name('payment');
-Route::get('cancel', 'PayPalController@cancel')->name('payment.cancel');
-Route::get('payment/success', 'PayPalController@success')->name('payment.success');
+// Route::get('payment/{id}', 'PayPalController@payment')->name('payment');
+// Route::get('cancel', 'PayPalController@cancel')->name('payment.cancel');
+// Route::get('payment/success', 'PayPalController@success')->name('payment.success');
 
 
+////////////////************ Paypal Routes ************////////////////
+// Route::get('paywithpaypal', [FrontendController::class, 'payWithPaypal']);
+Route::get('payment/{id}','PaypalController@paymentWithpaypal')->name('payment');
+Route::get('paypal','PaypalController@getPaymentStatus')->name('status');
+////////////////************ End Paypal Routes ************////////////////
+
+Route::get('/payment-process/{id}','StripeController@index')->name('payment-process');
+Route::post('/payment', 'StripeController@payment');
 
 // Backend section start
 
