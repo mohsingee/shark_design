@@ -114,19 +114,20 @@
                                                     @if ($product_detail->calculator_show == 1)
                                                         @if ($product_detail->calculator_type == 1)
                                                             <div class="row calculators-section" >
-                                                                <div class="form-group col-md-12">
+                                                                {{-- <div class="form-group col-md-12">
                                                                     <select name="order_unit" class="form-control unit_for_calculation col-md-12">
                                                                         <option value="">Select Unit</option>
                                                                         <option value="cm">CM</option>
                                                                         <option value="meter">Meter</option>
                                                                     </select>
-                                                                </div>
+                                                                </div> --}}
+                                                                <input type="hidden" name="order_unit" class="unit_for_calculation" value="cm">
                                                                 <div class="col-md-12 calculator_wood calculators">
                                                                     <div class="input-group">
-                                                                        <input id="cal-width" placeholder="Width" class=form-control" name="width" value="" type="number">
+                                                                        <input id="cal-width" placeholder="Width" class="form-control" name="width" value="" type="number">
                                                                     </div>
                                                                     <div class="input-group">
-                                                                        <input id="cal-length" class=form-control" placeholder="Length" name="length" value="" type="number">
+                                                                        <input id="cal-length" class="form-control" placeholder="Length" name="length" value="" type="number">
                                                                     </div>
                                                                     <div class="col-md-12">
                                                                         <button type="button" class="btn btn-primary btn-custom-design">Calculate</button>
@@ -159,19 +160,20 @@
                                                             </div>
                                                         @elseif($product_detail->calculator_type == 2)
                                                             <div class="row calculators-section" >
-                                                                <div class="form-group col-md-12">
+                                                                {{-- <div class="form-group col-md-12">
                                                                     <select name="order_unit" class="form-control unit_for_calculation col-md-12">
                                                                         <option value="">Select Unit</option>
                                                                         <option value="cm">CM</option>
                                                                         <option value="meter">Meter</option>
                                                                     </select>
-                                                                </div>
+                                                                </div> --}}
+                                                                <input type="hidden" name="order_unit" class="unit_for_calculation" value="cm">
                                                                 <div class="col-md-12 calculator_wood calculators">
                                                                     <div class="input-group">
-                                                                        <input id="cal-width" placeholder="Width" class=form-control" name="width" value="" type="number">
+                                                                        <input id="cal-width" placeholder="Width" class="form-control" name="width" value="" type="number">
                                                                     </div>
                                                                     <div class="input-group">
-                                                                        <input id="cal-length" class=form-control" placeholder="Height" name="length" value="" type="number">
+                                                                        <input id="cal-length" class="form-control" placeholder="Height" name="length" value="" type="number">
                                                                     </div>
                                                                     <div class="col-md-12">
                                                                         <button type="button" class="btn btn-primary btn-custom-meter_box">Calculate</button>
@@ -204,19 +206,20 @@
                                                             </div>
                                                         @elseif($product_detail->calculator_type == 3)
                                                             <div class="row calculators-section">
-                                                                <div class="form-group col-md-12">
+                                                                {{-- <div class="form-group col-md-12">
                                                                     <select name="order_unit" class="form-control unit_for_calculation col-md-12">
                                                                         <option value="">Select Unit</option>
                                                                         <option value="cm">CM</option>
                                                                         <option value="meter">Meter</option>
                                                                     </select>
-                                                                </div>
+                                                                </div> --}}
+                                                                <input type="hidden" name="order_unit" class="unit_for_calculation" value="cm">
                                                                 <div class="col-md-12 calculator_wood calculators">
                                                                     <div class="input-group">
-                                                                        <input id="cal-width" placeholder="Width" class=form-control" name="width" value="" type="number">
+                                                                        <input id="cal-width" placeholder="Width" class="form-control" name="width" value="" type="number">
                                                                     </div>
                                                                     <div class="input-group">
-                                                                        <input id="cal-length" class=form-control" placeholder="Height" name="length" value="" type="number">
+                                                                        <input id="cal-length" class="form-control" placeholder="Height" name="length" value="" type="number">
                                                                     </div>
                                                                     <div class="col-md-12">
                                                                         <button type="button" class="btn btn-primary btn-custom-roll">Calculate</button>
